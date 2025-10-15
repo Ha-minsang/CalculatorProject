@@ -42,7 +42,7 @@ public class App {
                     System.out.println("잘못된 연산 기호입니다.");
             }
             sc.nextLine();
-            System.out.print("계산기를 종료 하시겠습니까?(exit를 입력하면 종료됩니다)");
+            System.out.print("더 계산하시겠습니까?(exit를 입력하면 종료됩니다)");
             String input = sc.nextLine();
             if (input.equals("exit")) {
                 System.out.println("계산기를 종료합니다.");
