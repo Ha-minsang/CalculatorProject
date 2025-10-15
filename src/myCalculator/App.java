@@ -23,19 +23,19 @@ public class App {
             char operation = sc.next().charAt(0);
             switch (operation) {
                 case '+':
-                    System.out.println(number1 + number2);
+                    Calculator.add(number1, number2);
                     break;
                 case '-':
-                    System.out.println(number1 - number2);
+                    Calculator.sub(number1, number2);
                     break;
                 case '*':
-                    System.out.println(number1 * number2);
+                    Calculator.mul(number1, number2);
                     break;
                 case '/':
                     if (number2 == 0) {
                         System.out.println("0으로는 나눌수 없습니다.");
                     } else {
-                        System.out.println(number1 / number2);
+                        Calculator.div(number1, number2);
                     }
                     break;
                 default:
@@ -43,7 +43,6 @@ public class App {
             }
             sc.nextLine();
             System.out.print("계산기를 종료 하시겠습니까?(exit를 입력하면 종료됩니다)");
-
             String input = sc.nextLine();
             if (input.equals("exit")) {
                 System.out.println("계산기를 종료합니다.");
