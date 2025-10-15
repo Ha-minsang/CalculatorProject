@@ -6,3 +6,26 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+# IntelliJ IDEA 설정 폴더 및 파일
+.idea/
+*.iml
+
+# 빌드/실행 결과물
+out/
+build/
+target/
+
+# 자바 컴파일 파일
+*.class
+*.jar
+
+# 로그 파일
+*.log
+
+# 운영체제 자동 생성 파일
+.DS_Store
+Thumbs.db
+
+# 임시 파일
+*.tmp
+*.bak
