@@ -37,10 +37,12 @@ public class Calculator {
         System.out.println("계산 결과는 " + result + "입니다.");
     }
 
-    public ArrayList<Integer> getAnswers() {
+    // 게터 기능
+    public ArrayList<Integer> getAnswers(){
         return answers;
     }
 
+    // 세터 기능
     public void setAnswers(ArrayList<Integer> answers) {
         this.answers = answers;
     }
