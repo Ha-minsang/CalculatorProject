@@ -3,7 +3,7 @@ package myCalculator;
 import java.util.ArrayList;
 
 public class Calculator {
-    private static ArrayList<Integer> answers = new ArrayList<>();
+   private ArrayList<Integer> answers = new ArrayList<>();
 
     // 덧셈 기능
     void add(int a, int b) {
@@ -42,7 +42,7 @@ public class Calculator {
     }
 
     public void setAnswers(ArrayList<Integer> answers) {
-        Calculator.answers = answers;
+        this.answers = answers;
     }
 
 }
