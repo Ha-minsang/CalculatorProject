@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Calculator cal = new Calculator();
+
         while (true) {
 
             System.out.print("첫번째 숫자를 입력하세요: ");
@@ -25,19 +27,19 @@ public class App {
             String operation = sc.nextLine();
             switch (operation) {
                 case "+":
-                    Calculator.add(number1, number2);
+                    cal.add(number1, number2);
                     break;
                 case "-":
-                    Calculator.sub(number1, number2);
+                    cal.sub(number1, number2);
                     break;
                 case "*":
-                    Calculator.mul(number1, number2);
+                    cal.mul(number1, number2);
                     break;
                 case "/":
                     if (number2 == 0) {
                         System.out.println("0으로는 나눌수 없습니다.");
                     } else {
-                        Calculator.div(number1, number2);
+                        cal.div(number1, number2);
                     }
                     break;
                 default:

@@ -6,7 +6,7 @@ public class Calculator {
     private static ArrayList<Integer> answers = new ArrayList<>();
 
     // 덧셈 기능
-    static void add(int a, int b) {
+    void add(int a, int b) {
         int result = a + b;
         answers.add(result);
 
@@ -14,7 +14,7 @@ public class Calculator {
     }
 
     // 뺄셈 기능
-    static void sub(int a, int b) {
+    void sub(int a, int b) {
         int result = a - b;
         answers.add(result);
 
@@ -22,7 +22,7 @@ public class Calculator {
     }
 
     // 곱셈 기능
-    static void mul(int a, int b) {
+    void mul(int a, int b) {
         int result = a * b;
         answers.add(result);
 
@@ -30,18 +30,18 @@ public class Calculator {
     }
 
     // 나눗셈 기능
-    static void div(int a, int b) {
+    void div(int a, int b) {
         int result = a / b;
         answers.add(result);
 
         System.out.println("계산 결과는 " + result + "입니다.");
     }
 
-    public static ArrayList<Integer> getAnswers() {
+    public ArrayList<Integer> getAnswers() {
         return answers;
     }
 
-    public static void setAnswers(ArrayList<Integer> answers) {
+    public void setAnswers(ArrayList<Integer> answers) {
         Calculator.answers = answers;
     }
 
