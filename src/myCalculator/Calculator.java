@@ -3,16 +3,15 @@ package myCalculator;
 import java.util.ArrayList;
 
 public class Calculator {
-    static ArrayList<Integer> answers = new ArrayList<>();
+    private static final ArrayList<Integer> answers = new ArrayList<>();
 
-   // 덧셈 기능
+    // 덧셈 기능
     static void add(int a, int b) {
         int result = a + b;
-        answers.add(result);
         System.out.println("계산 결과는 " + result + "입니다.");
     }
 
-    // 마이너스 기능
+    // 뺄셈 기능
     static void sub(int a, int b) {
         int result = a - b;
         answers.add(result);
@@ -26,12 +25,15 @@ public class Calculator {
         System.out.println("계산 결과는 " + result + "입니다.");
     }
 
-
     // 나눗셈 기능
     static void div(int a, int b) {
         int result = a / b;
         answers.add(result);
         System.out.println("계산 결과는 " + result + "입니다.");
+    }
+
+    public static ArrayList<Integer> getAnswers() {
+        return answers;
     }
 
 }
