@@ -1,5 +1,6 @@
 package myCalculator;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
@@ -20,18 +21,19 @@ public class App {
             }
 
             System.out.print("연산 기호를 입력하세요: ");
-            char operation = sc.next().charAt(0);
+            sc.nextLine();
+            String operation = sc.nextLine();
             switch (operation) {
-                case '+':
+                case "+":
                     Calculator.add(number1, number2);
                     break;
-                case '-':
+                case "-":
                     Calculator.sub(number1, number2);
                     break;
-                case '*':
+                case "*":
                     Calculator.mul(number1, number2);
                     break;
-                case '/':
+                case "/":
                     if (number2 == 0) {
                         System.out.println("0으로는 나눌수 없습니다.");
                     } else {
@@ -41,7 +43,6 @@ public class App {
                 default:
                     System.out.println("잘못된 연산 기호입니다.");
             }
-            sc.nextLine();
             System.out.print("더 계산하시겠습니까?(exit를 입력하면 종료됩니다)");
             String input = sc.nextLine();
             if (input.equals("exit")) {
