@@ -14,25 +14,30 @@ public class App {
 
         while (true) {
             try {
+                // 이전 계산 결과 값이 있을 때 첫번째 숫자 대체
                 try {
                     calNumber = cal.getAnswers().get(cal.getAnswers().size() - 1);
                     number1 = calNumber;
                     System.out.println("첫번째 숫자는 이전 계산 결과인 " + number1 + "입니다.");
-                    }
-                catch (IndexOutOfBoundsException e) {
-                        System.out.print("첫번째 숫자를 입력하세요: ");
-                        number1 = sc.nextInt();
-                        if (number1 < 0) {
-                            System.out.println("양의 정수를 입력하세요.");
-                        }
                 }
 
+                // 이전 계산 결과 값이 없을 때 첫번째 숫자 입력
+                catch (IndexOutOfBoundsException e) {
+                    System.out.print("첫번째 숫자를 입력하세요: ");
+                    number1 = sc.nextInt();
+                    if (number1 < 0) {
+                        System.out.println("양의 정수를 입력하세요.");
+                    }
+                }
+
+                // 두번째 숫자 입력
                 System.out.print("두번째 숫자를 입력하세요: ");
                 number2 = sc.nextInt();
                 if (number2 < 0) {
                     System.out.println("양의 정수를 입력하세요.");
                 }
 
+                // 연산 기호 입력
                 System.out.print("연산 기호를 입력하세요: ");
                 sc.nextLine();
                 String operation = sc.nextLine();
@@ -56,6 +61,8 @@ public class App {
                     default:
                         System.out.println("잘못된 연산 기호입니다.");
                 }
+
+                // 프로그램 종료 여부 확인
                 System.out.print("더 계산하시겠습니까?(exit를 입력하면 종료됩니다)");
                 String input = sc.nextLine();
 
@@ -63,6 +70,8 @@ public class App {
                     System.out.println("계산기를 종료합니다.");
                     break;
                 }
+
+            // 계산기 실행 도중 잘못된 값을 입력하였을 때 메세지 송출
             } catch (InputMismatchException e) {
                 sc.nextLine();
                 System.out.println("정상적인 입력이 아닙니다.");
