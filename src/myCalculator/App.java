@@ -8,16 +8,16 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Calculator cal = new Calculator();
-        int number1 = 0;
-        int number2 = 0;
-        int result = 0;
-        int resultNumber;
+        double number1;
+        double number2;
+        double result = 0;
+        double resultNumber;
 
         while (true) {
             try {
                 // 이전 계산 결과 값이 있을 때 첫번째 숫자 대체
                 try {
-                    resultNumber = cal.getAnswers().get(cal.getAnswers().size() - 1);
+                    resultNumber = (double) cal.getAnswers().get(cal.getAnswers().size() - 1);
                     number1 = resultNumber;
                     System.out.println("첫번째 숫자는 이전 계산 결과인 " + number1 + "입니다.");
                 }
@@ -25,12 +25,12 @@ public class App {
                 // 이전 계산 결과 값이 없을 때 첫번째 숫자 입력
                 catch (IndexOutOfBoundsException e) {
                     System.out.print("첫번째 숫자를 입력하세요: ");
-                    number1 = sc.nextInt();
+                    number1 = sc.nextDouble();
                 }
 
                 // 두번째 숫자 입력
                 System.out.print("두번째 숫자를 입력하세요: ");
-                number2 = sc.nextInt();
+                number2 = sc.nextDouble();
 
                 // 연산 기호 입력
                 System.out.print("연산 기호를 입력하세요: ");

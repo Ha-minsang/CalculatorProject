@@ -2,25 +2,25 @@ package myCalculator;
 
 import java.util.ArrayList;
 
-public class Calculator {
-   private ArrayList<Integer> answers = new ArrayList<>();
+public class Calculator<T> {
+   private ArrayList<T> answers = new ArrayList<T>();
 
     // 게터 기능
-    public ArrayList<Integer> getAnswers(){
+    public ArrayList<T> getAnswers(){
         return answers;
     }
 
     // 세터 기능
-    public void setAnswers(ArrayList<Integer> answers) {
+    public void setAnswers(ArrayList<T> answers) {
         this.answers = answers;
     }
 
-    public void addAnswer(int result) {
+    public void addAnswer(T result) {
         answers.add(result);
     }
 
     // 삭제 기능
-    public void removeAnswer(int answer) {
+    public void removeAnswer(T answer) {
         answers.remove(answer);
     }
 }
