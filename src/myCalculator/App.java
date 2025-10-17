@@ -1,5 +1,8 @@
 package myCalculator;
 
+import myCalculator.core.Operation;
+import myCalculator.core.ResultManager;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -11,6 +14,7 @@ public class App {
         double number2;
         double result = 0;
         double resultNumber;
+
 
         while (true) {
             try {
@@ -37,22 +41,22 @@ public class App {
                 String operation = sc.nextLine();
                 switch (operation) {
                     case "+": {
-                        result = Arithmetic.ADD.apply(number1, number2);
+                        result = Operation.ADD.apply(number1, number2);
                         break;
                     }
                     case "-": {
-                        result = Arithmetic.SUB.apply(number1, number2);
+                        result = Operation.SUB.apply(number1, number2);
                         break;
                     }
                     case "*": {
-                        result = Arithmetic.MUL.apply(number1, number2);
+                        result = Operation.MUL.apply(number1, number2);
                         break;
                     }
                     case "/": {
                         if (number2 == 0) {
                             System.out.println("0으로는 나눌수 없습니다.");
                         } else {
-                            result = Arithmetic.DIV.apply(number1, number2);
+                            result = Operation.DIV.apply(number1, number2);
                         }
                         break;
                     }

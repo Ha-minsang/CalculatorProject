@@ -1,6 +1,6 @@
-package myCalculator;
+package myCalculator.core;
 
-public enum Arithmetic {
+public enum Operation {
     // 덧셈 기능
     ADD("+") {
         public double apply(double a, double b) {
@@ -30,7 +30,7 @@ public enum Arithmetic {
     };
 
 String symbol;
-    Arithmetic(String symbol) {
+    Operation(String symbol) {
         this.symbol = symbol;
     }
 

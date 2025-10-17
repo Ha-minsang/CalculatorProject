@@ -1,4 +1,4 @@
-package myCalculator;
+package myCalculator.core;
 
 import java.util.ArrayList;
 
