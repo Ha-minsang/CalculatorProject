@@ -10,7 +10,8 @@ public class App {
         Calculator cal = new Calculator();
         int number1 = 0;
         int number2 = 0;
-        Integer resultNumber;
+        int result = 0;
+        int resultNumber;
 
         while (true) {
             try {
@@ -25,42 +26,42 @@ public class App {
                 catch (IndexOutOfBoundsException e) {
                     System.out.print("첫번째 숫자를 입력하세요: ");
                     number1 = sc.nextInt();
-                    if (number1 < 0) {
-                        System.out.println("양의 정수를 입력하세요.");
-                    }
                 }
 
                 // 두번째 숫자 입력
                 System.out.print("두번째 숫자를 입력하세요: ");
                 number2 = sc.nextInt();
-                if (number2 < 0) {
-                    System.out.println("양의 정수를 입력하세요.");
-                }
 
                 // 연산 기호 입력
                 System.out.print("연산 기호를 입력하세요: ");
                 sc.nextLine();
                 String operation = sc.nextLine();
                 switch (operation) {
-                    case "+":
-                        cal.add(number1, number2);
+                    case "+": {
+                        result = Arithmetic.ADD.apply(number1, number2);
                         break;
-                    case "-":
-                        cal.sub(number1, number2);
+                    }
+                    case "-": {
+                        result = Arithmetic.SUB.apply(number1, number2);
                         break;
-                    case "*":
-                        cal.mul(number1, number2);
+                    }
+                    case "*": {
+                        result = Arithmetic.MUL.apply(number1, number2);
                         break;
-                    case "/":
+                    }
+                    case "/": {
                         if (number2 == 0) {
                             System.out.println("0으로는 나눌수 없습니다.");
                         } else {
-                            cal.div(number1, number2);
+                            result = Arithmetic.DIV.apply(number1, number2);
                         }
                         break;
+                    }
                     default:
                         System.out.println("잘못된 연산 기호입니다.");
                 }
+                System.out.println("계산 결과는 " + result + "입니다.");
+                cal.addAnswer(result);
 
                 // 프로그램 종료 여부 확인
                 System.out.print("더 계산하시겠습니까?(exit를 입력하면 종료됩니다)");
