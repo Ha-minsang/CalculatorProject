@@ -2,7 +2,7 @@ package myCalculator;
 
 import java.util.ArrayList;
 
-public class Calculator<T> {
+public class ResultManager<T> {
    private ArrayList<T> answers = new ArrayList<T>();
 
     // 게터 기능

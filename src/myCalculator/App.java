@@ -1,13 +1,12 @@
 package myCalculator;
 
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Calculator cal = new Calculator();
+        ResultManager resultManager = new ResultManager();
         double number1;
         double number2;
         double result = 0;
@@ -17,7 +16,7 @@ public class App {
             try {
                 // 이전 계산 결과 값이 있을 때 첫번째 숫자 대체
                 try {
-                    resultNumber = (double) cal.getAnswers().get(cal.getAnswers().size() - 1);
+                    resultNumber = (double) resultManager.getAnswers().get(resultManager.getAnswers().size() - 1);
                     number1 = resultNumber;
                     System.out.println("첫번째 숫자는 이전 계산 결과인 " + number1 + "입니다.");
                 }
@@ -61,7 +60,7 @@ public class App {
                         System.out.println("잘못된 연산 기호입니다.");
                 }
                 System.out.println("계산 결과는 " + result + "입니다.");
-                cal.addAnswer(result);
+                resultManager.addAnswer(result);
 
                 // 프로그램 종료 여부 확인
                 System.out.print("더 계산하시겠습니까?(exit를 입력하면 종료됩니다)");
