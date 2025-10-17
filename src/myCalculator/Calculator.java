@@ -47,4 +47,8 @@ public class Calculator {
         this.answers = answers;
     }
 
+    // 삭제 기능
+    public void removeAnswer(int answer) {
+        answers.remove(answer);
+    }
 }
