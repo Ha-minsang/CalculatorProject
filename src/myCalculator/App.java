@@ -10,14 +10,14 @@ public class App {
         Calculator cal = new Calculator();
         int number1 = 0;
         int number2 = 0;
-        Integer calNumber;
+        Integer resultNumber;
 
         while (true) {
             try {
                 // 이전 계산 결과 값이 있을 때 첫번째 숫자 대체
                 try {
-                    calNumber = cal.getAnswers().get(cal.getAnswers().size() - 1);
-                    number1 = calNumber;
+                    resultNumber = cal.getAnswers().get(cal.getAnswers().size() - 1);
+                    number1 = resultNumber;
                     System.out.println("첫번째 숫자는 이전 계산 결과인 " + number1 + "입니다.");
                 }
 
