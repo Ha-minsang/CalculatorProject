@@ -27,7 +27,9 @@ public class InputManager {
                         }
                 }
             } catch (InputMismatchException e) {
-                sc.nextLine();
+                if (sc.hasNextLine()) {
+                    sc.nextLine();
+                }
                 System.out.println("정상적인 입력이 아닙니다.");
                 System.out.print("숫자를 다시 입력해 주세요: ");
             }
@@ -35,19 +37,14 @@ public class InputManager {
     }
 
     public String inputOperation() {
+        sc.nextLine();
         while (true) {
-            try {
-                sc.nextLine();
-                String choice = sc.nextLine();
-                if (choice.equals("+") || choice.equals("-")
-                        ||choice.equals("*") ||choice.equals("/")) {
-                    return choice;
-                } else {
-                    throw new InputMismatchException();
-                }
-            } catch (InputMismatchException e) {
+            String choice = sc.nextLine();
+            if (choice.equals("+") || choice.equals("-")
+                    || choice.equals("*") || choice.equals("/")) {
+                return choice;
+            } else {
                 System.out.println("정상적인 입력이 아닙니다.");
-                sc.nextLine();
                 System.out.print("연산 기호를 다시 입력해 주세요: ");
             }
         }
