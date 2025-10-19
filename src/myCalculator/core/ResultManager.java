@@ -15,6 +15,7 @@ public class ResultManager<T> {
         this.answers = answers;
     }
 
+    // 저장 기능
     public void addAnswer(T result) {
         answers.add(result);
     }
