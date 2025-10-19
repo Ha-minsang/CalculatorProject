@@ -3,10 +3,10 @@ package myCalculator.core;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class CalculatorManager {
+public class InputManager {
     Scanner sc = new Scanner(System.in);
 
-    public double enterNumber(String numberType) {
+    public double inputNumber(String numberType) {
         while (true) {
             try {
                 switch (numberType) {
@@ -34,11 +34,17 @@ public class CalculatorManager {
         }
     }
 
-    public String enterOperation() {
+    public String inputOperation() {
         while (true) {
             try {
                 sc.nextLine();
-                return sc.nextLine();
+                String choice = sc.nextLine();
+                if (choice.equals("+") || choice.equals("-")
+                        ||choice.equals("*") ||choice.equals("/")) {
+                    return choice;
+                } else {
+                    throw new InputMismatchException();
+                }
             } catch (InputMismatchException e) {
                 System.out.println("정상적인 입력이 아닙니다.");
                 sc.nextLine();
