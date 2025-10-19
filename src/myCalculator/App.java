@@ -14,10 +14,13 @@ public class App {
         double result = 0;
 //        double resultNumber =result; // 마지막으로 저장된 계산 결과
         double menu = 1;
+        int exit = 0;
 
         System.out.println("계산기를 실행합니다.");
 
         while (true) {
+            if(exit==1) break;
+
             switch ((int) menu) {
                 // 새로운 계산
                 case 1: {
@@ -50,7 +53,35 @@ public class App {
                         System.out.println(answerHistory);
                     }
 
+                    System.out.print("1.메뉴 선택으로 돌아가기       " + "2.오래된 기록 삭제\n"
+                            + "3.검색 필터   " + "4.계산기 종료\n"
+                            + "원하시는 메뉴를 선택해 숫자를 입력해주세요: ");
+                    double select =  inputManager.inputNumber("menuNumber");
 
+                    switch ((int)select) {
+                        case 1: {
+                            System.out.print("1.새로운 계산       " + "2.이어서 계산\n"
+                                    + "3.계산 기록 보기   " + "4.계산기 종료\n"
+                                    + "원하시는 메뉴를 선택해 숫자를 입력해주세요: ");
+                            menu = inputManager.inputNumber("menuNumber");
+                            continue;
+                        }
+                        case 2: {
+                            resultManager.removeAnswer(0);
+                            continue;
+                        }
+                        case 3: {
+                            // 입력 값보다 큰 결과만 보이게 구현 예정
+                        }
+                        case 4: {
+                            menu = 4;
+                            continue;
+                        }
+                    }
+                }
+                case 4: {
+                    exit = 1;
+                continue;
                 }
             }
 
@@ -69,8 +100,6 @@ public class App {
                 }
             }
 
-
-
             // 입력한 연산 기호에 따른 계산
             Operation op = Operation.formSymbol(symbol);
             result = op.calculate(number1, number2);
@@ -83,15 +112,13 @@ public class App {
             // 메뉴 선택
             System.out.print("1.새로운 계산       " + "2.이어서 계산\n"
                     + "3.계산 기록 보기   " + "4.계산기 종료\n"
-                    + "원하시는 메뉴를 선택해 숫자를 입력해주세요: ");
+                    + "\n원하시는 메뉴를 선택해 숫자를 입력해주세요: ");
             menu = inputManager.inputNumber("menuNumber");
 
-            // 계산기 종료
-            if (menu == 4) {
-                System.out.println("계산기를 종료합니다.");
-                break;
-            }
         }
+
+        //while문이 끝나면 계산기 종료
+        System.out.println("계산기를 종료합니다.");
     }
 }
 
