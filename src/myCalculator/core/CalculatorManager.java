@@ -9,22 +9,26 @@ public class CalculatorManager {
     public double enterNumber(String numberType) {
         while (true) {
             try {
-                if (numberType.equals("firstNumber")) {
-                    return sc.nextDouble();
-                } else if (numberType.equals("secondNumber")) {
-                    return sc.nextDouble();
-                }else if (numberType.equals("menuNumber")) {
-                    double choice =  sc.nextDouble();
-                    if (1 <= choice && choice <= 4) {
+                switch (numberType) {
+                    case "firstNumber":
                         return sc.nextDouble();
-                    } else {
-                        System.out.print("1 2 3 4 중에 선택해 다시 입력해 주세요. ");
-                        sc.next();
-                    }
+
+                    case "secondNumber":
+                        return sc.nextDouble();
+
+                    case "menuNumber":
+                        while (true) {
+                            double choice = sc.nextDouble();
+                            if (1 <= choice && choice <= 4) {
+                                return choice;
+                            } else {
+                                System.out.print("1~4 중 다시 입력해주세요: ");
+                            }
+                        }
                 }
             } catch (InputMismatchException e) {
+                sc.nextLine();
                 System.out.println("정상적인 입력이 아닙니다.");
-                sc.next();
                 System.out.print("숫자를 다시 입력해 주세요: ");
             }
         }
@@ -37,7 +41,7 @@ public class CalculatorManager {
                 return sc.nextLine();
             } catch (InputMismatchException e) {
                 System.out.println("정상적인 입력이 아닙니다.");
-                sc.next();
+                sc.nextLine();
                 System.out.print("연산 기호를 다시 입력해 주세요: ");
             }
         }
