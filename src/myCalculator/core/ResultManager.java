@@ -21,7 +21,7 @@ public class ResultManager<T> {
     }
 
     // 삭제 기능
-    public void removeAnswer(T answer) {
-        answers.remove(answer);
+    public void removeAnswer(int index) {
+        answers.remove(index);
     }
 }
