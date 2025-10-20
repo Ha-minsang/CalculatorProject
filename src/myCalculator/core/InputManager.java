@@ -12,11 +12,11 @@ public class InputManager {
             try {
                 switch (numberType) {
                     // 단순 숫자 입력
-                    case "inputNumber":
+                    case "number":
                         return sc.nextDouble();
 
-                        // 메뉴 선택
-                    case "menuNumber":
+                    // 메뉴 선택
+                    case "menu":
                         while (true) {
                             double choice = sc.nextDouble();
                             if (1 <= choice && choice <= 4) {
@@ -59,7 +59,7 @@ public class InputManager {
                 // 검색 필터 입력
                 case "searchType": {
                     String search = sc.nextLine();
-                    if (search.equals("over")|| search.equals("under")|| search.equals("equal")) {
+                    if (search.equals("over") || search.equals("under") || search.equals("equal")) {
                         return search;
                     } else {
                         System.out.println("\n정상적인 입력이 아닙니다.");
@@ -67,7 +67,7 @@ public class InputManager {
                     }
                     break;
                 }
-        }
+            }
         }
     }
 }

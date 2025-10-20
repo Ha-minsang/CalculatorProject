@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ResultManager<T> {
-   private List<T> answersList = new ArrayList<T>();
+    private List<T> answersList = new ArrayList<T>();
 
     // 게터 기능
-    public ArrayList<T> getAnswers(){
+    public ArrayList<T> getAnswers() {
         return (ArrayList<T>) answersList;
     }
 

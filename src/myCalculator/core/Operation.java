@@ -18,7 +18,7 @@ public enum Operation {
     String symbol;
     DoubleBinaryOperator operator;
 
-    // Enum 상수 구성
+    // 생성자
     Operation(String symbol, DoubleBinaryOperator operator) {
         this.symbol = symbol;
         this.operator = operator;
