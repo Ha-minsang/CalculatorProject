@@ -67,9 +67,14 @@ public class AppContext {
 
     // 히스토리 메뉴 숫자 입력
     public double selectHistoryMenu() {
-        System.out.print("\n1.메뉴 선택으로 돌아가기" + "\n2.오래된 기록 삭제"
-                + "\n3.검색 필터" + "\n4.계산기 종료\n"
-                + "원하시는 메뉴를 선택해 숫자를 입력해주세요: ");
+        System.out.print("""
+                
+                1.메뉴 선택으로 돌아가기
+                2.오래된 기록 삭제\
+                
+                3.검색 필터
+                4.계산기 종료
+                원하시는 메뉴를 선택해 숫자를 입력해주세요:\s""");
         return inputManager.inputNumber("menu");
     }
 
@@ -85,8 +90,12 @@ public class AppContext {
     public double searchHistory() {
         System.out.print("기준이 될 숫자를 입력해 주세요: ");
         double inputNumber = inputManager.inputNumber("number");
-        System.out.print("over: 기준값보다 큰 기록만 검색\nunder: 기준값보다 작은 기록만 검색" +
-                "\nequal: 기준값과 같은 기록만 검색\n검색 유형을 입력해 주세요: ");
+        System.out.print("""
+                over: 기준값보다 큰 기록만 검색
+                under: 기준값보다 작은 기록만 검색\
+                
+                equal: 기준값과 같은 기록만 검색
+                검색 유형을 입력해 주세요:\s""");
         String searchType = inputManager.inputString("searchType");
         List<String> searchList = resultManager.getAnswers();
         List<Double> serchList = searchList.stream()
