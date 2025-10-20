@@ -24,10 +24,11 @@ public class App {
             menu = menuManager.mainMenu(menu);
 
             // 선택된 메뉴가 계산기 종료일시 즉시 종료
-            if (menu == 4) {
-                exit = true;
-                continue;
-            }
+           if (menu == 3) continue;
+           if (menu == 4) {
+               exit = true;
+               continue;
+           }
 
             // 첫번째 숫자 입력
             number1 = appContext.inputFirstNumber(menu, result, displayResult);

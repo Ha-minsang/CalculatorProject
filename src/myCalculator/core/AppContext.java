@@ -80,9 +80,13 @@ public class AppContext {
 
     // 히스토리 출력
     public void showHistory() {
-        System.out.println("\n이전 계산 기록를 불러옵니다.\n");
-        for (Object answerHistory : resultManager.getAnswers()) {
-            System.out.println(answerHistory);
+        if (resultManager.getAnswers().isEmpty()) {
+            System.out.println("저장된 기록이 없습니다.");
+        } else {
+            System.out.println("\n이전 계산 기록를 불러옵니다.\n");
+            for (Object answerHistory : resultManager.getAnswers()) {
+                System.out.println(answerHistory);
+            }
         }
     }
 
