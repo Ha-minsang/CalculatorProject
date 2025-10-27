@@ -13,8 +13,8 @@ public class ResultManager<T> {
     }
 
     // 저장 기능
-    public void addAnswer(T result) {
-        answersList.add(result);
+    public void addAnswer(String num1, String symbol, String num2, String result) {
+        answersList.add((T) (num1 + symbol + num2 + "=" + result));
     }
 
     // 삭제 기능

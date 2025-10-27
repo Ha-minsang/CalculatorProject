@@ -52,7 +52,7 @@ public class App {
             resultManager.showResult(displayResult);
 
             // 계산 결과 저장
-            resultManager.addAnswer(displayNumber1 + symbol + displayNumber2 + " = " + displayResult);
+            resultManager.addAnswer(displayNumber1, symbol, displayNumber2, displayResult);
 
             // 메뉴 선택
             menu = menuManager.selectMenu();
