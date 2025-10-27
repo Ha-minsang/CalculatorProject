@@ -4,7 +4,7 @@ import myCalculator.core.*;
 
 public class App {
     public static void main(String[] args) {
-        ResultManager<String> resultManager = new ResultManager();
+        ResultManager<String> resultManager = new ResultManager<String>();
         InputManager inputManager = new InputManager();
         NumberFormat numberFormat = new NumberFormat();
         AppContext appContext = new AppContext(inputManager, resultManager);
@@ -49,7 +49,7 @@ public class App {
             String displayNumber2 = numberFormat.changeType(number2);
 
             // 계산 결과 출력
-            appContext.showResult(displayResult);
+            resultManager.showResult(displayResult);
 
             // 계산 결과 저장
             resultManager.addAnswer(displayNumber1 + symbol + displayNumber2 + " = " + displayResult);

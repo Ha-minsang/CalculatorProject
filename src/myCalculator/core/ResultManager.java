@@ -20,4 +20,10 @@ public class ResultManager<T> {
     public void removeAnswer(int index) {
         answersList.remove(index);
     }
+
+    // 계산 결과 출력 기능
+    public void showResult(String displayResult) {
+        System.out.println("계산 결과는 " + displayResult + "입니다.\n" +
+                "(소수점 아래 세자리까지만 표시됩니다)\n");
+    }
 }
