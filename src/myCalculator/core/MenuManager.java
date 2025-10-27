@@ -1,5 +1,7 @@
 package myCalculator.core;
 
+import java.util.InputMismatchException;
+
 public class MenuManager {
 
     private final AppContext appContext;
@@ -22,7 +24,7 @@ public class MenuManager {
         } else if (input == 4) { // 4. 계산기 종료
             return 4;
         } else {
-            return 1; //사용하지 않지만 컴파일러 오류 방지용 코드
+            throw new InputMismatchException("오류: 잘못된 입력입니다.");
         }
     }
 
@@ -38,7 +40,7 @@ public class MenuManager {
         } else if (input == 4) { // 4. 계산기 종료
             return 4;
         } else {
-            return 1; //사용하지 않지만 컴파일러 오류 방지용 코드
+            throw new InputMismatchException("오류: 잘못된 입력입니다.");
         }
     }
 }
