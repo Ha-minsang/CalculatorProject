@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ResultManager<T> {
-    private List<T> answersList = new ArrayList<T>();
+    private final List<T> answersList = new ArrayList<T>();
     InputManager inputManager = new InputManager();
 
     // 게터 기능

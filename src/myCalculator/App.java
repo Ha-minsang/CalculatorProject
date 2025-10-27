@@ -7,7 +7,7 @@ public class App {
         ResultManager<String> resultManager = new ResultManager<String>();
         InputManager inputManager = new InputManager();
         NumberFormat numberFormat = new NumberFormat();
-        AppContext appContext = new AppContext(inputManager, resultManager);
+        AppContext appContext = new AppContext(inputManager);
         MenuManager menuManager = new MenuManager(resultManager);
 
         double number1 = 0; // 첫번째 입력 숫자
