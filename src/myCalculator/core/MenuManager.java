@@ -13,16 +13,13 @@ public class MenuManager {
 
     // 메인 메뉴 실행
     public double mainMenu(double input) {
-        if (input == 1) { // 1. 새로운 계산
-            return 1;
-        } else if (input == 2) { // 2. 이어서 계산
-            return 2;
+        if (input == 1 || input == 2 || input == 4) {
+            // 1. 새로운 계산, 2. 이어서 계산, 4. 계산기 종료
+            return input;
         } else if (input == 3) { // 3. 계산 기록(히스토리) 보기
             appContext.showHistory();
             double select = appContext.selectHistoryMenu();
             return historyMenu(select); // 히스토리 메뉴 선택
-        } else if (input == 4) { // 4. 계산기 종료
-            return 4;
         } else {
             throw new InputMismatchException("오류: 잘못된 입력입니다.");
         }
