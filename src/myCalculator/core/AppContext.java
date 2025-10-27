@@ -4,10 +4,10 @@ import java.util.List;
 
 public class AppContext {
     private final InputManager inputManager;
-    private final ResultManager resultManager;
+    private final ResultManager<String> resultManager;
 
     // 생성자
-    public AppContext(InputManager inputManager, ResultManager resultManager) {
+    public AppContext(InputManager inputManager, ResultManager<String> resultManager) {
         this.inputManager = inputManager;
         this.resultManager = resultManager;
     }
