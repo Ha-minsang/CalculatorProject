@@ -41,10 +41,11 @@ public class MenuManager {
 
     // 메인 메뉴 실행
     public double mainMenu(double input) {
-        if (input == 1 || input == 2 || input == 4) {
+        if (input == Menu.NEW.menuNumber || input == Menu.CONTINUE.menuNumber
+                || input == Menu.EXIT.menuNumber) {
             // 1. 새로운 계산, 2. 이어서 계산, 4. 계산기 종료
             return input;
-        } else if (input == 3) { // 3. 계산 기록(히스토리) 보기
+        } else if (input == Menu.HISTORY.menuNumber) { // 3. 계산 기록(히스토리) 보기
             resultManager.showHistory();
             double select = selectHistoryMenu();
             return historyMenu(select); // 히스토리 메뉴 선택

@@ -1,5 +1,6 @@
 package myCalculator.core;
 
+import java.util.InputMismatchException;
 import java.util.List;
 
 public class AppContext {
@@ -20,7 +21,7 @@ public class AppContext {
             System.out.println("\n첫번째 숫자는 이전 계산 결과인 " + displayResult + "입니다.");
             return result;
         } else {
-            return 0; //사용하지 않는 컴파일러 오류 방지용 코드
+            throw new InputMismatchException("오류: 잘못된 입력입니다.");
         }
     }
 
