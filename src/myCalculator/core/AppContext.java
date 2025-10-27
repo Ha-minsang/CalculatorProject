@@ -29,7 +29,7 @@ public class AppContext {
     // 연산 기호 입력
     public String inputOperation() {
         System.out.print("연산 기호를 입력하세요: ");
-        return inputManager.inputString("operation");
+        return inputManager.inputOperation();
     }
 
 
@@ -100,7 +100,7 @@ public class AppContext {
                 
                 equal: 기준값과 같은 기록만 검색
                 검색 유형을 입력해 주세요:\s""");
-        String searchType = inputManager.inputString("searchType");
+        String searchType = inputManager.inputSearchType();
         List<String> searchList = resultManager.getAnswers();
         List<Double> serchList = searchList.stream()
                 .map(answer -> answer.split("=")[1])

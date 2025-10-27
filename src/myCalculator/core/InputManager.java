@@ -37,36 +37,29 @@ public class InputManager {
         }
     }
 
-    // 문자 입력 메서드
-    public String inputString(String input) {
+    public String inputOperation() {
         sc.nextLine();
         while (true) {
-            switch (input) {
-                // 기호 입력
-                case "operation": {
-                    String choice = sc.nextLine();
-                    if (choice.equals("+") || choice.equals("-")
-                            || choice.equals("*") || choice.equals("/")) {
-                        return choice;
-                    } else {
-                        System.out.println("\n정상적인 입력이 아닙니다.");
-                        System.out.print("연산 기호를 다시 입력해 주세요: ");
-                    }
-                    break;
-                }
-
-                // 검색 필터 입력
-                case "searchType": {
-                    String search = sc.nextLine();
-                    if (search.equals("over") || search.equals("under") || search.equals("equal")) {
-                        return search;
-                    } else {
-                        System.out.println("\n정상적인 입력이 아닙니다.");
-                        System.out.print("over / under / equal 중 다시 입력해주세요: ");
-                    }
-                    break;
-                }
+            String choice = sc.nextLine();
+            if (choice.equals("+") || choice.equals("-")
+                    || choice.equals("*") || choice.equals("/")) {
+                return choice;
             }
+            System.out.println("\n정상적인 입력이 아닙니다.");
+            System.out.print("연산 기호를 다시 입력해 주세요: ");
+            ;
+        }
+    }
+
+
+    public String inputSearchType() {
+        while (true) {
+            String search = sc.nextLine();
+            if (search.equals("over") || search.equals("under") || search.equals("equal")) {
+                return search;
+            }
+            System.out.println("\n정상적인 입력이 아닙니다.");
+            System.out.print("over / under / equal 중 다시 입력해주세요: ");
         }
     }
 }
