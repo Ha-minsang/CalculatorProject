@@ -8,7 +8,7 @@ public class App {
         InputManager inputManager = new InputManager();
         NumberFormat numberFormat = new NumberFormat();
         AppContext appContext = new AppContext(inputManager, resultManager);
-        MenuManager menuManager = new MenuManager(appContext);
+        MenuManager menuManager = new MenuManager(resultManager);
 
         double number1 = 0; // 첫번째 입력 숫자
         double number2 = 0; // 두번째 입력 숫자
@@ -55,7 +55,7 @@ public class App {
             resultManager.addAnswer(displayNumber1 + symbol + displayNumber2 + " = " + displayResult);
 
             // 메뉴 선택
-            menu = appContext.selectMenu();
+            menu = menuManager.selectMenu();
         }
 
         //while문이 끝나면 계산기 종료
