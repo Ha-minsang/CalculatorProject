@@ -24,7 +24,6 @@ public class InputManager {
                             } else {
                                 System.out.print("1~4 중 다시 입력해주세요: ");
                             }
-                            break;
                         }
                 }
                 // 숫자가 아닌 값을 입력했을때
