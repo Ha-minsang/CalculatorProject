@@ -4,7 +4,7 @@ import myCalculator.core.*;
 
 public class App {
     public static void main(String[] args) {
-        ResultManager resultManager = new ResultManager();
+        ResultManager<String> resultManager = new ResultManager();
         InputManager inputManager = new InputManager();
         NumberFormat numberFormat = new NumberFormat();
         AppContext appContext = new AppContext(inputManager, resultManager);
