@@ -1,5 +1,6 @@
 package myCalculator.core;
 
+import java.util.InputMismatchException;
 import java.util.function.DoubleBinaryOperator;
 
 public enum Operation {
@@ -15,8 +16,8 @@ public enum Operation {
     // 나눗셈 기능
     DIV("/" , (a, b) -> a / b);
 
-    String symbol;
-    DoubleBinaryOperator operator;
+    final String symbol;
+    final DoubleBinaryOperator operator;
 
     // 생성자
     Operation(String symbol, DoubleBinaryOperator operator) {
@@ -41,6 +42,6 @@ public enum Operation {
                 return operation;
             }
         }
-        return null; // 실행되지 않지만 오류 방지를 위해 추가
+        throw new InputMismatchException("오류: 잘못된 입력입니다.");
     }
 }
