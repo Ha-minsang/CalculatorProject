@@ -17,7 +17,7 @@ public class AppContext {
     public double inputFirstNumber(double input, double result, String displayResult) {
         if (input == 1) {
             System.out.print("\n첫번째 숫자를 입력하세요: ");
-            return inputManager.inputNumber("number");
+            return inputManager.inputNumber();
         } else if (input == 2) {
             System.out.println("\n첫번째 숫자는 이전 계산 결과인 " + displayResult + "입니다.");
             return result;
@@ -37,7 +37,7 @@ public class AppContext {
     public double inputSecondNumber(String symbol) {
         System.out.print("두번째 숫자를 입력하세요: ");
         while (true) {
-            double number2 = inputManager.inputNumber("number");
+            double number2 = inputManager.inputNumber();
             if (symbol.equals("/") && number2 == 0) {
                 System.out.print("0으로는 나눌수 없습니다. 다른 숫자를 입력해주세요: ");
             } else {
@@ -62,7 +62,7 @@ public class AppContext {
                 4.계산기 종료\
                 
                 원하시는 메뉴를 선택해 숫자를 입력해주세요:\s""");
-        return inputManager.inputNumber("menu");
+        return inputManager.inputMenu();
     }
 
     // 히스토리 메뉴 숫자 입력
@@ -75,7 +75,7 @@ public class AppContext {
                 3.검색 필터
                 4.계산기 종료
                 원하시는 메뉴를 선택해 숫자를 입력해주세요:\s""");
-        return inputManager.inputNumber("menu");
+        return inputManager.inputMenu();
     }
 
     // 히스토리 출력
@@ -93,7 +93,7 @@ public class AppContext {
     // 조건에 맞는 결과 검색
     public double searchHistory() {
         System.out.print("기준이 될 숫자를 입력해 주세요: ");
-        double inputNumber = inputManager.inputNumber("number");
+        double inputNumber = inputManager.inputNumber();
         System.out.print("""
                 over: 기준값보다 큰 기록만 검색
                 under: 기준값보다 작은 기록만 검색\
